@@ -7,16 +7,16 @@ import { ImAttachment } from "react-icons/im";
 import ChatCard from "./ChatCard/ChatCard";
 import MessageCard from "./MessageCard/MessageCard";
 
-const HomePage = () => {
-  const [querys, setQuerys] = useState(null);
+const HomePage = () => 
+  { const  [querys, setQuerys] = useState(null);
   const [currentChat, setCurrentChat] = useState(null);
 
-  const handelClickonChatCard = () => [setCurrentChat(true)];
+  const handelClickonChatCard = () => (setCurrentChat(true));
   const handleSearch = () => [];
-  return (
+  
     <div className="relative">
       <div className="w-full py-14 bg-[#00a884]"></div>
-      <div className="flex bg-[#f0f2f5] h-[90vh] absolute left-[2vw] top-[5vh] w-[96vw]">
+      <div className="flex bg-[#f0f2f5] h-[90vh] absolute left-[2vw] top-[5vh] w-[96vw]"></div>
         <div className="left w-[30%] bg-[#e8e9ec] h-full">
           <div className="w-full">
             <div className="flex justify-between items-center p-3">
@@ -54,7 +54,7 @@ const HomePage = () => {
             {/* all user */}
             <div className="bg-white overflow-y-scroll h-[70vh] px-3">
               {querys &&
-                [1, 1, 1, 1, 1].map((item) => (
+                [1, 1, 1, 1, 1].map(() => (
                   <div onClick={handelClickonChatCard}>
                     {" "}
                     <hr /> <ChatCard />{" "}
@@ -82,7 +82,7 @@ const HomePage = () => {
         )}
 
         {/*{message part}*/}
-        {currentChat && (
+        { currentChat && 
           <div className="w-[70%] relative">
             <div className="header absolute top-0 w-full bg-[#f0f2f5]">
               <div className="flex justify-between">
@@ -99,11 +99,11 @@ const HomePage = () => {
                   <BsThreeDotsVertical />
                 </div>
               </div>
-            </div>
+            </div>&rbrace;
             {/* message section */}
             <div className="px-10 h-[85vh] overflow-y-scroll bg-blue-200">
             <div className="space-y-1 flex flex-col justify-center mt-20 py-2">
-              {[1, 1, 1, 1, 1].map((item, i) => (
+              {[1, 1, 1, 1, 1].map((_item, i) => (
                 <MessageCard
                   isReqUserMessage={i % 2 === 0}
                   content={"message"}
@@ -111,6 +111,7 @@ const HomePage = () => {
               ))}
             </div>
           </div>
+        
         {/* footer part */}
 
         <div className="footer bg-[#f0f2f5] absolute bottom-0 w-full py-3 text-2xl">
@@ -129,17 +130,16 @@ const HomePage = () => {
           onKeyPress={(e)=>{
             if(e.key=="Enter"){
             handelCreateNewMessage();
-            setContent("")
+            setContent("Abc")
           }
         
-        }}
-        />
-        <BsMicFill/>
+          }}
+          />
+          <BsMicFill/>
         </div>
       </div>
-      )}
-       </div>
-  );
-};
-
-export default HomePage;
+      </div>
+  }</div>
+  
+        }
+ export default HomePage;
